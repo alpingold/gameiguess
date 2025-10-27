@@ -48,7 +48,8 @@ class Game:
         self.ui = UIManager((internal_w, internal_h))
         from .ecs import World  # late import to avoid circular
 
-        self.world = World()
+        self._world_cls = World
+        self.world = self._world_cls()
         self.player: int = 0
         self.floor = 1
         self.seed = settings.seed or random.randint(0, 999999)
@@ -62,7 +63,7 @@ class Game:
         self.keyring: set[str] = set()
 
     def new_game(self) -> None:
-        self.world = World()
+        self.world = self._world_cls()
         self.message_log = c.MessageLog()
         self.keyring = set()
         self.floor = 1
