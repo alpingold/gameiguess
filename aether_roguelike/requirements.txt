@@ -1,0 +1,5 @@
+pygame==2.5.2
+numpy==1.26.4
+tcod==16.1.2
+pygame_gui==0.6.9
+pytest==7.4.4
