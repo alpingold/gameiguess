@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caverns-of-aether"
+version = "0.1.0"
+authors = [
+  { name = "Caverns Team" }
+]
+description = "Caverns of Aether — Advanced Edition roguelike"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Topic :: Games/Entertainment :: Role-Playing",
+]
+dependencies = [
+  "pygame==2.5.2",
+  "numpy==1.26.4",
+  "tcod==16.1.2",
+  "pygame_gui==0.6.9"
+]
+
+[project.optional-dependencies]
+test = ["pytest==7.4.4"]
+
+[tool.setuptools]
+packages = ["aether"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra"
+testpaths = ["tests"]
